@@ -1,3 +1,6 @@
+// Created without looking at a profiler at all. It ends up being twice as slow.
+// After looking at a profiler, it's obvious to see that the csv package is the
+// the problem.
 package main
 
 import (
