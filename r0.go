@@ -10,9 +10,6 @@ import (
 	"strconv"
 )
 
-const testMeasurementsPath = "test_measurements.csv"
-const realMeasurementsPath = "measurements.txt"
-
 type Stats struct {
 	Max   float64
 	Min   float64
@@ -39,8 +36,7 @@ func (s Stats) String() string {
 	return fmt.Sprintf("%.1f/%.1f/%.1f", s.Min, s.Mean(), s.Max)
 }
 
-func main() {
-	measurementsPath := testMeasurementsPath
+func r0(measurementsPath string) {
 	file, err := os.Open(measurementsPath)
 	if err != nil {
 		log.Fatalf("Could not open %s: %s", measurementsPath, err)
