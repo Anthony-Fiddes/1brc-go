@@ -54,10 +54,11 @@ var numWorkers = runtime.GOMAXPROCS(0)
 // save a lot of time, since the work done by processRows took up way less time
 // than the Read calls initialized by the CSV reader.
 //
-// Examples online open multiple file handles at the same time and seek to
-// different parts of the file. My first instinct was that having a single large
-// read would be the fastest way to access the data. I found a lovely source on
-// how SSDs work and it appears to agree:
+// Examples online (e.g. https://benhoyt.com/writings/go-1brc/) open multiple
+// file handles at the same time and seek to different parts of the file. My
+// first instinct was that having a single large read would be the fastest way
+// to access the data. I found a lovely source on how SSDs work and it appears
+// to agree:
 // https://codecapsule.com/2014/02/12/coding-for-ssds-part-5-access-patterns-and-system-optimizations/
 //
 // But I can't argue with the results that people are getting. Maybe the
