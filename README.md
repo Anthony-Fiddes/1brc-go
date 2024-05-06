@@ -25,7 +25,7 @@ The machine used to benchmark was a Lenovo Z13 Gen 1:
 
 I left some comments in the source code on each revision with more detail about
 what was changed and what sources I referred to online to learn more about
-how/what to optimize. The best stuff is in ./r1.go, but here's a short summary
+how/what to optimize. The best stuff is in [r1.go](./r1.go), but here's a short summary
 of what I did.
 
 |Revision|Change|
