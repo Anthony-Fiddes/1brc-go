@@ -21,7 +21,7 @@ The machine used to benchmark was a Lenovo Z13 Gen 1:
   * Arch Linux btrfs partition encrypted with LUKS2
 * Used 3 warm-up runs and then averaged the speed of 10 runs for each command
 * measurements.txt file generated using the tool at
-  https://github.com/gunnarmorling/1brc/blob/main/create_measurements.sh 1000000000
+  https://github.com/gunnarmorling/1brc/blob/main/create_measurements.sh
 
 I left some comments in the source code on each revision with more detail about
 what was changed and what sources I referred to online to learn more about
