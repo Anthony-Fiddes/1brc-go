@@ -50,7 +50,8 @@ func processRows(rows <-chan []string, results chan<- map[string]Stats) {
 var numWorkers = runtime.GOMAXPROCS(0)
 
 // Created without looking at a profiler at all. It ends up being about twice as
-// slow. After looking at the profiler, it's clear that this approach wouldn't
+// slow. (Edit: after making the channel buffered, it's *only* about 80 seconds
+// slower) After looking at the profiler, it's clear that this approach wouldn't
 // save a lot of time, since the work done by processRows took up way less time
 // than the Read calls initialized by the CSV reader.
 //
@@ -75,8 +76,8 @@ func r1(measurementsPath string) {
 	}
 	defer file.Close()
 
-	rows := make(chan []string)
-	results := make(chan map[string]Stats)
+	rows := make(chan []string, 100)
+	results := make(chan map[string]Stats, numWorkers)
 	for i := 0; i < numWorkers; i++ {
 		go processRows(rows, results)
 	}
