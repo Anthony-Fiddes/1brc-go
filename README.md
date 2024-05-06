@@ -31,7 +31,7 @@ of what I did.
 |Revision|Change|
 |--------|------|
 |0|My most common sense, idiomatic version|
-|1|A horribly slow attempt to paralellize reading from processing measurements.|
+|1|A horribly slow attempt to paralellize by separating reading the file from processing the measurements|
 |2|Return to sequential processing, just enable csv.Reader.ReuseRecord|
 |3|Add a 1MiB buffer|
 |4|Successfully parallelize the read, taking advantage of my NVME SSD|
