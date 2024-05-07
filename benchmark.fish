@@ -3,7 +3,7 @@
 go build .
 
 set -l commands
-for revision in (seq 0 6)
+for revision in (seq 0 7)
     set -a commands "'./1brc-go --revision $revision measurements.txt'"
 end
 
