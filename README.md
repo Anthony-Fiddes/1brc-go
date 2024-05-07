@@ -12,6 +12,7 @@ understanding WHY different optimizations made a difference.
 | `./1brc-go --revision 4 measurements.txt` | 42.963 ± 0.249 | 42.670 | 43.526 | 1.34 ± 0.01 |
 | `./1brc-go --revision 5 measurements.txt` | 37.485 ± 0.400 | 37.144 | 38.574 | 1.17 ± 0.01 |
 | `./1brc-go --revision 6 measurements.txt` | 32.136 ± 0.186 | 31.786 | 32.345 | 1.00 |
+| `./1brc-go --revision 7 ./measurements.txt` | 25.915 ± 1.772 | 22.386 | 27.731 | 0.85735 |
 
 The machine used to benchmark was a Lenovo Z13 Gen 1:
 
@@ -37,6 +38,7 @@ of what I did.
 |4|Successfully parallelize the read, taking advantage of my NVME SSD|
 |5|Give each goroutine their own 1MiB buffer|
 |6|Use pointers instead of values for the Stats structs|
+|7|Buffer the channel used to send the results from goroutines|
 
 I didn't feel like implementing my own map or using a 3rd party library, so I
 stopped there.

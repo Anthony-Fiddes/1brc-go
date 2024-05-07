@@ -15,7 +15,7 @@ func main() {
 	flag.Parse()
 
 	type Revision func(measurementsPath string)
-	revisions := []Revision{r0, r1, r2, r3, r4, r5, r6}
+	revisions := []Revision{r0, r1, r2, r3, r4, r5, r6, r7}
 	if *revision >= len(revisions) || *revision < 0 {
 		log.SetFlags(0)
 		log.Printf("revision must be between %d and %d", 0, len(revisions)-1)
